@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+html,body
+{
+    width:100%;
+    height:100%;
+}
+
+body
+{
+    background-color: rgb(190, 185, 185);
+}
+
+
+.main
+{
+    width: 600px;
+    height: 400px;
+    background-color: rgb(240, 234, 219);
+    position: fixed;
+    top:  10%;
+    left: 30%;   
+    border-radius: 20px;
+    box-shadow: 1px 1px  5px 1px;
+}
+
+.main h1 
+{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 10px;
+}
+
+.emoji-input #emoji-value
+{
+ padding: 10px;
+ border-radius: 5px;
+ border: none;
+}
