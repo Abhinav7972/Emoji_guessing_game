@@ -57,3 +57,11 @@ body
  cursor: pointer;
 }
 
+
+.score
+{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(36, 36, 36);
+}
+
