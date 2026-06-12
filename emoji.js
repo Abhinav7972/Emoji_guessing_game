@@ -13,16 +13,19 @@ const [{ description, emojis }] = emoji;
 
 function getemoji()
 {
-    document.addEventListener('DOMContentLoaded', () => {
-    for(let i = 0; i<1;i++)
+    document.addEventListener('DOMContentLoaded', displayEmoji);
+
+    function displayEmoji()
+    {
+     for(let i = 0; i<1;i++)
     {
         shuffleEmoji(emoji);
 
        emojiel.textContent = emoji[i].emojis;
     }
 
-        console.log(emojiel.textContent)
-    });
+         console.log(emojiel.textContent)
+    }
 }
 
 
