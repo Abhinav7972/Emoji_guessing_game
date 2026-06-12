@@ -39,27 +39,24 @@ const emojiel = document.querySelector('#emojis');
 const emojiin = document.querySelector('#emoji-value');
 const scoreEl = document.querySelector('#score-value');
 
-let currentEmojiIndex = 1;
+let currentEmojiIndex = 0;
 let answer = true;
 let score = 0
 
 
 
 
- function displayEmoji()
-    {
-        console.log('displayemoji called')
+function displayEmoji() {
+    console.log('displayemoji called')
 
-     for(let i = 0; i<emoji.length;i++)
-    {
-       shuffleEmoji(emoji);
-         emojiel.textContent = emoji[i].emojis;
-         currentEmojiIndex = i;
-        }
-        console.log("Current index:", currentEmojiIndex);
-        console.log(emojiel.textContent)
-        console.log("Current emoji:", emoji[currentEmojiIndex].emojis);
-    }
+    shuffleEmoji(emoji);
+    emojiel.textContent = emoji[currentEmojiIndex].emojis;
+        
+    console.log("Current index:", currentEmojiIndex);
+    console.log(emojiel.textContent)
+    console.log("Current emoji:", emoji[currentEmojiIndex].emojis);
+}
+    
 
 function getemoji()
 {
@@ -80,13 +77,15 @@ function getScore()
 
             if (answer) {
                 score += 1;
-                scoreEl.textContent =  `Score : ${score}`;
+                scoreEl.textContent = `Score : ${score}`;
+                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
                 displayEmoji()
 
             }
             else if (answer == false && score > 0) {
                 score -= 1;
                 scoreEl.textContent = `Score : ${score}`;
+                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
                 displayEmoji()
             }
             
