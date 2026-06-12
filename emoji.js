@@ -1,7 +1,35 @@
 const emoji = [
     { description: 'smile', emojis: '🙂' },
     { description: 'smile blush', emojis: '😊' },
-    { description: 'smile shades', emojis: '😎' },    
+    { description: 'smile shades', emojis: '😎' }, 
+     { description: 'laughing', emojis: '😂' },
+    { description: 'crying', emojis: '😭' },
+    { description: 'thinking', emojis: '🤔' },
+    { description: 'angry', emojis: '😡' },
+    { description: 'sleeping', emojis: '😴' },
+    { description: 'heart eyes', emojis: '😍' },
+    { description: 'party', emojis: '🥳' },
+    { description: 'mind blown', emojis: '🤯' },
+    { description: 'cool', emojis: '😏' },
+    { description: 'sick', emojis: '🤒' },
+    { description: 'nerd', emojis: '🤓' },
+    { description: 'surprised', emojis: '😲' },
+    { description: 'shocked', emojis: '😱' },
+    { description: 'wink', emojis: '😉' },
+    { description: 'kiss', emojis: '😘' },
+    { description: 'confused', emojis: '😕' },
+    { description: 'rolling eyes', emojis: '🙄' },
+    { description: 'money face', emojis: '🤑' },
+    { description: 'devil', emojis: '😈' },
+    { description: 'robot', emojis: '🤖' },
+    { description: 'clown', emojis: '🤡' },
+    { description: 'ghost', emojis: '👻' },
+    { description: 'alien', emojis: '👽' },
+    { description: 'cat', emojis: '🐱' },
+    { description: 'dog', emojis: '🐶' },
+    { description: 'lion', emojis: '🦁' },
+    { description: 'monkey', emojis: '🐵' },
+    { description: 'horse', emojis: '🐴' }
 ]
 
 
@@ -22,7 +50,7 @@ let score = 0
     {
         console.log('displayemoji called')
 
-     for(let i = 0; i<1;i++)
+     for(let i = 0; i<emoji.length;i++)
     {
        shuffleEmoji(emoji);
          emojiel.textContent = emoji[i].emojis;
