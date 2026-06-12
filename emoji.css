@@ -71,3 +71,37 @@ body
     font-size: 30px;
 }
 
+
+.notification
+{
+    margin: 30px auto;
+    text-align: center;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: none;
+}
+
+#notification-value
+{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(36, 36, 36);
+    padding: 5px;
+}
+
+
+
+.right
+{
+    background-color: greenyellow;
+    color: black;
+}
+
+.wrong
+{
+    background-color: red;
+    color: white;
+}
+
