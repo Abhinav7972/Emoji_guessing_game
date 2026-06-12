@@ -11,15 +11,17 @@ const [{ description, emojis }] = emoji;
 function getemoji()
 {
     document.addEventListener('DOMContentLoaded', () => {
-        shuffleEmoji();
+        shuffleEmoji(emoji);
+
+        console.log(emojiel.textContent)
     });
 }
 
 
-function shuffleEmoji()
+function shuffleEmoji(emojiarr)
 {
     // collect only the emoji characters
-    const emojisOnly = emoji.map(e => e.emojis);
+    const emojisOnly = emojiarr.map(e => e.emojis);
 
     // Fisher-Yates shuffle
     for (let i = emojisOnly.length - 1; i > 0; i--) {
@@ -29,12 +31,12 @@ function shuffleEmoji()
 
     // put shuffled emojis back into the original objects preserving descriptions
     for (let k = 0; k < emoji.length; k++) {
-        emoji[k].emojis = emojisOnly[k];
+        emojiarr[k].emojis = emojisOnly[k];
     }
 
     for(let i = 0; i<1;i++)
     {
-       emojiel.textContent += emoji[i].emojis;
+       emojiel.textContent += emojiarr[i].emojis;
     }
 }
 
