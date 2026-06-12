@@ -5,13 +5,21 @@ const emoji = [
 ]
 
 
+
+
 const emojiel = document.querySelector('#emojis');
 const emojiin = document.querySelector('#emoji-value');
 const [{ description, emojis }] = emoji;
+
 function getemoji()
 {
     document.addEventListener('DOMContentLoaded', () => {
         shuffleEmoji(emoji);
+
+    for(let i = 0; i<1;i++)
+    {
+       emojiel.textContent += emoji[i].emojis;
+    }
 
         console.log(emojiel.textContent)
     });
@@ -34,10 +42,9 @@ function shuffleEmoji(emojiarr)
         emojiarr[k].emojis = emojisOnly[k];
     }
 
-    for(let i = 0; i<1;i++)
-    {
-       emojiel.textContent += emojiarr[i].emojis;
-    }
+    return emojiarr;
+
+   
 }
 
 
