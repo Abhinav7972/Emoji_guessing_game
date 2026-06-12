@@ -9,25 +9,35 @@ const emoji = [
 
 const emojiel = document.querySelector('#emojis');
 const emojiin = document.querySelector('#emoji-value');
+const scoreEl = document.querySelector('#score-value');
+
 let currentEmojiIndex = 1;
+let answer = true;
+let score = 0
 
-function getemoji()
-{
-    document.addEventListener('DOMContentLoaded', displayEmoji);
 
-    function displayEmoji()
+
+
+ function displayEmoji()
     {
+        console.log('displayemoji called')
+
      for(let i = 0; i<1;i++)
     {
        shuffleEmoji(emoji);
-       currentEmojiIndex = i;
-       emojiel.textContent = emoji[i].emojis;
+         emojiel.textContent = emoji[i].emojis;
+         currentEmojiIndex = i;
+        }
+        console.log("Current index:", currentEmojiIndex);
+        console.log(emojiel.textContent)
+        console.log("Current emoji:", emoji[currentEmojiIndex].emojis);
     }
 
-        console.log(emojiel.textContent)
-        console.log("Current index:", currentEmojiIndex);
-console.log("Current emoji:", emoji[currentEmojiIndex]);
-    }
+function getemoji()
+{
+    console.log('getemoji called')
+
+    document.addEventListener('DOMContentLoaded', displayEmoji);
 }
 
 
@@ -39,6 +49,20 @@ function getScore()
         if (e.key === "Enter")
         {
             validate(emoji[currentEmojiIndex])
+
+            if (answer) {
+                score += 1;
+                scoreEl.textContent = score;
+                displayEmoji()
+
+            }
+            else if (answer == false && score > 0) {
+                score -= 1;
+                scoreEl.textContent = score;
+                displayEmoji()
+            }
+            
+
             emojiin.value = "";
         }
     })
@@ -46,25 +70,26 @@ function getScore()
 
     function validate(emoji)
     {
+
     
             if(emoji.description.trim().toLowerCase()===emojiin.value.trim().toLowerCase())
             {
                 console.log(emoji.description)
-                console.log("correct")
-                return;
+                console.log(answer)
+                answer = true;
             }
             else
             {
                 console.log(emoji.description)
-                console.log("incorrect")
-                return;
-            } 
+                console.log(answer)
+                answer = false;
+        } 
+        
 
            
     }
 }
 
-getScore()
 
 
 
@@ -89,6 +114,8 @@ function shuffleEmoji(emojiarr)
         emojiarr[k].description = description[k];
     }
 
+
+
     return emojiarr;
 
    
@@ -99,3 +126,4 @@ function shuffleEmoji(emojiarr)
 
 
 getemoji()
+getScore()
