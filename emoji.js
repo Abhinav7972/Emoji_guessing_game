@@ -80,13 +80,13 @@ function getScore()
 
             if (answer) {
                 score += 1;
-                scoreEl.textContent = score;
+                scoreEl.textContent =  `Score : ${score}`;
                 displayEmoji()
 
             }
             else if (answer == false && score > 0) {
                 score -= 1;
-                scoreEl.textContent = score;
+                scoreEl.textContent = `Score : ${score}`;
                 displayEmoji()
             }
             
