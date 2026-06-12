@@ -14,11 +14,11 @@ const [{ description, emojis }] = emoji;
 function getemoji()
 {
     document.addEventListener('DOMContentLoaded', () => {
-        shuffleEmoji(emoji);
-
     for(let i = 0; i<1;i++)
     {
-       emojiel.textContent += emoji[i].emojis;
+        shuffleEmoji(emoji);
+
+       emojiel.textContent = emoji[i].emojis;
     }
 
         console.log(emojiel.textContent)
