@@ -104,12 +104,14 @@ function getScore()
                 console.log(emoji.description)
                 console.log(answer)
                 answer = true;
+                displayEmoji()
             }
             else
             {
                 console.log(emoji.description)
                 console.log(answer)
                 answer = false;
+                displayEmoji()
         } 
         
 
