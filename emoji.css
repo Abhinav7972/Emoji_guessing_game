@@ -42,7 +42,7 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 35px;
     margin: 10px;
 }
 
@@ -63,5 +63,11 @@ body
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(36, 36, 36);
+}
+
+
+#emojis
+{
+    font-size: 30px;
 }
 
