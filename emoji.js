@@ -87,9 +87,9 @@ function getScore()
                 notificationel.textContent = "correct";
                 setTimeout(() => {
                     notificationel.style.display = "none";
-                    displayEmoji()
+                    nextEmoji()
 
-                }, 500);
+                }, 300);
                 
 
             }
@@ -103,8 +103,8 @@ function getScore()
                 notificationel.textContent = "incorrect try again !!";
                 setTimeout(() => {
                     notificationel.style.display = "none";
-                    displayEmoji()
-                }, 500);
+                    nextEmoji()
+                }, 300);
 
                 
             }
@@ -124,14 +124,12 @@ function getScore()
                 console.log(emoji.description)
                 console.log(answer)
                 answer = true;
-                displayEmoji()
             }
             else
             {
                 console.log(emoji.description)
                 console.log(answer)
                 answer = false;
-                displayEmoji()
         } 
         
 
@@ -139,6 +137,13 @@ function getScore()
     }
 }
 
+function nextEmoji()
+{
+    //currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
+    setTimeout(() => {
+    displayEmoji();
+    },200)
+}
 
 
 
