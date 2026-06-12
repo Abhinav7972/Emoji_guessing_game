@@ -80,32 +80,35 @@ function getScore()
             if (answer) {
                 score += 1;
                 scoreEl.textContent = `Score : ${score}`;
-                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
                 notificationel.style.display = "block";
                 notificationel.classList.remove("wrong");
                 notificationel.classList.add("right");
                 notificationel.textContent = "correct";
                 setTimeout(() => {
                     notificationel.style.display = "none";
-                    nextEmoji()
+                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
 
+                    nextEmoji()
+                      
                 }, 300);
+
                 
 
             }
             else if (answer == false && score > 0) {
                 score -= 1;
                 scoreEl.textContent = `Score : ${score}`;
-                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
                 notificationel.style.display = "block";
                 notificationel.classList.remove("right");
                 notificationel.classList.add("wrong");
                 notificationel.textContent = "incorrect try again !!";
                 setTimeout(() => {
                     notificationel.style.display = "none";
+                currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
+
                     nextEmoji()
                 }, 300);
-
+                
                 
             }
             
