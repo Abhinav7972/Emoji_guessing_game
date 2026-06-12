@@ -38,6 +38,8 @@ const emoji = [
 const emojiel = document.querySelector('#emojis');
 const emojiin = document.querySelector('#emoji-value');
 const scoreEl = document.querySelector('#score-value');
+const notificationel = document.querySelector('.notification');
+
 
 let currentEmojiIndex = 0;
 let answer = true;
@@ -79,14 +81,32 @@ function getScore()
                 score += 1;
                 scoreEl.textContent = `Score : ${score}`;
                 currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
-                displayEmoji()
+                notificationel.style.display = "block";
+                notificationel.classList.remove("wrong");
+                notificationel.classList.add("right");
+                notificationel.textContent = "correct";
+                setTimeout(() => {
+                    notificationel.style.display = "none";
+                    displayEmoji()
+
+                }, 500);
+                
 
             }
             else if (answer == false && score > 0) {
                 score -= 1;
                 scoreEl.textContent = `Score : ${score}`;
                 currentEmojiIndex = (currentEmojiIndex + 1) % emoji.length;
-                displayEmoji()
+                notificationel.style.display = "block";
+                notificationel.classList.remove("right");
+                notificationel.classList.add("wrong");
+                notificationel.textContent = "incorrect try again !!";
+                setTimeout(() => {
+                    notificationel.style.display = "none";
+                    displayEmoji()
+                }, 500);
+
+                
             }
             
 
