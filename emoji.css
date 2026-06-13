@@ -13,6 +13,7 @@ html,body
 body
 {
     background-color: rgb(190, 185, 185);
+    overflow: hidden;
 }
 
 
@@ -21,11 +22,15 @@ body
     width: 600px;
     height: 400px;
     background-color: rgb(240, 234, 219);
-    position: fixed;
-    top:  10%;
-    left: 30%;   
+    margin: 100px auto;
     border-radius: 20px;
     box-shadow: 1px 1px  10px 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .main h1 
@@ -42,8 +47,8 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 35px;
-    margin: 10px;
+    gap: 20px;
+    margin: 5px;
 }
 
 .emoji-input #emoji-value
