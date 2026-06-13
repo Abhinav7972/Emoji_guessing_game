@@ -39,11 +39,14 @@ const emojiel = document.querySelector('#emojis');
 const emojiin = document.querySelector('#emoji-value');
 const scoreEl = document.querySelector('#score-value');
 const notificationel = document.querySelector('.notification');
+const timerel = document.querySelector('#timer-value');
 
 
 let currentEmojiIndex = 0;
 let answer = true;
 let score = 0
+let timer;
+let seconds = 10;
 
 
 
@@ -53,10 +56,7 @@ function displayEmoji() {
 
     shuffleEmoji(emoji);
     emojiel.textContent = emoji[currentEmojiIndex].emojis;
-        
-    console.log("Current index:", currentEmojiIndex);
-    console.log(emojiel.textContent)
-    console.log("Current emoji:", emoji[currentEmojiIndex].emojis);
+    
 }
     
 
@@ -64,7 +64,7 @@ function getemoji()
 {
     console.log('getemoji called')
 
-    document.addEventListener('DOMContentLoaded', displayEmoji);
+    document.addEventListener('DOMContentLoaded', displayEmoji(), setTimer());
 }
 
 
@@ -180,7 +180,28 @@ function shuffleEmoji(emojiarr)
 
 
 
+function setTimer() {
+    timer = setInterval(() => {
+        seconds--;
+    timerel.textContent = `Time : ${seconds}`;
+        
+        endGame()
+    }, 1000)
 
+}
+
+
+function endGame()
+{
+    if (seconds === 0)
+    {
+        clearInterval(timer);
+        emojiin.disabled = true;
+            emojiin.value = "";
+        timerel.textContent = `Times Up !!`;
+        scoreEl.textContent = `Total Score : ${score}`;
+    }
+}
 
 getemoji()
 getScore()
